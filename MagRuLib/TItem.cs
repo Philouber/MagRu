@@ -5,6 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MagRuLib {
-  public class Class1 {
+  public class TItem {
+
+    public string Name { get; set; }
+    
+    public TItem() { }
+    public TItem(string name) {
+      Name = name;
+    }
   }
 }
