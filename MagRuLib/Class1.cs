@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagRuLib
-{
-    public class Class1
-    {
-    }
+namespace MagRuLib {
+  public class Class1 {
+  }
 }
