@@ -19,13 +19,13 @@ namespace MagRuLib {
 
     public abstract IEnumerable<IMagRuItem> GetAllItems();
 
-    public abstract IEnumerable<IMagRuRecipe> GetAllRecipes();
+    //public abstract IEnumerable<IMagRuRecipe> GetAllRecipes();
 
-    public abstract IEnumerable<IMagRuRecipe> GetAllRecipesForItem(IMagRuItem item);
+    public abstract IEnumerable<IMagRuItem> GetAllItemsRequestingItem(IMagRuItem item);
 
     public abstract IMagRuItem GetItem(string name);
 
-    public abstract IMagRuRecipe GetRecipe(string name);
+    //public abstract IMagRuRecipe GetRecipe(string name);
 
     
   }

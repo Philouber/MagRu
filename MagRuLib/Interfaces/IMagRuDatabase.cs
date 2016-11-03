@@ -8,8 +8,8 @@ namespace MagRuLib {
   public interface IMagRuDatabase : IDisposable {
     IEnumerable<IMagRuItem> GetAllItems();
     IMagRuItem GetItem(string name);
-    IEnumerable<IMagRuRecipe> GetAllRecipes();
-    IMagRuRecipe GetRecipe(string name);
-    IEnumerable<IMagRuRecipe> GetAllRecipesForItem(IMagRuItem item);
+    //IEnumerable<IMagRuRecipe> GetAllRecipes();
+    //IMagRuRecipe GetRecipe(string name);
+    IEnumerable<IMagRuItem> GetAllItemsRequestingItem(IMagRuItem item);
   }
 }

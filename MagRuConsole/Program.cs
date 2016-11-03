@@ -10,37 +10,38 @@ namespace MagRuConsole {
   class Program {
     static void Main(string[] args) {
 
-      Console.WriteLine("Test with demo DB");
       using (IMagRuDatabase Db = new TMagRuDbDemo()) {
-        TestDb(Db);
+        TestDb("Test with demo DB", Db);
+      }
+      ConsoleExtension.Pause();
+      Console.WriteLine();
+
+      using (IMagRuDatabase Db = new TMagRuDbXml("data", "items.xml")) {
+        TestDb("Test with XML DB", Db);
       }
 
       ConsoleExtension.Pause();
     }
 
-    static void TestDb(IMagRuDatabase MagRuDatabase) {
+    static void TestDb(string title, IMagRuDatabase MagRuDatabase) {
 
-      Console.WriteLine("Demo read all gems");
+      Console.WriteLine($"== {title} ==");
+      Console.WriteLine("-- Read all items");
       foreach (TMagRuItem ItemItem in MagRuDatabase.GetAllItems()) {
-        Console.WriteLine($"Item = {ItemItem.Name}");
+        Console.WriteLine($"  Item = {ItemItem.ToString()}");
       }
 
-      Console.WriteLine("Demo read all recipes");
-      foreach (TMagRuRecipe RecipeItem in MagRuDatabase.GetAllRecipes()) {
-        Console.WriteLine($"Item = {RecipeItem.Name}");
+      Console.WriteLine("-- Read all items requesting blue item");
+      foreach (TMagRuItem ItemItem in MagRuDatabase.GetAllItemsRequestingItem(new TMagRuItem("Blue"))) {
+        Console.WriteLine($"  Item = {ItemItem.ToString()}");
       }
 
-      Console.WriteLine("Demo read all recipes with details");
-      foreach (TMagRuRecipe RecipeItem in MagRuDatabase.GetAllRecipes()) {
-        Console.WriteLine($"Item = {RecipeItem.GetRecipeComponentsAsText()}");
+      Console.WriteLine("-- Read all items requesting red item");
+      foreach (TMagRuItem ItemItem in MagRuDatabase.GetAllItemsRequestingItem(new TMagRuItem("Red"))) {
+        Console.WriteLine($"  Item = {ItemItem.ToString()}");
       }
 
-      Console.WriteLine("Demo read all recipes for blue gem");
-      foreach (TMagRuRecipe RecipeItem in MagRuDatabase.GetAllRecipesForItem(new TMagRuItem("Blue"))) {
-        Console.WriteLine($"Item = {RecipeItem.GetRecipeComponentsAsText()}");
-      }
-
-      Console.WriteLine("Completed.");
+      Console.WriteLine("== Completed.");
     }
   }
 }

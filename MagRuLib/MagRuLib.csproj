@@ -52,6 +52,7 @@
     <Compile Include="Interfaces\IName.cs" />
     <Compile Include="TMagRuDbDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TMagRuDbXml.cs" />
     <Compile Include="TMagRuItem.cs" />
     <Compile Include="TMagRuRecipe.cs" />
   </ItemGroup>
@@ -59,7 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Items.xml" />
+    <None Include="Data\Items.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

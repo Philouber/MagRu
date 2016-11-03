@@ -17,6 +17,12 @@ namespace MagRuLib {
     public TMagRuRecipe() { }
     public TMagRuRecipe(string name) : base(name) {
     }
+    public TMagRuRecipe(IMagRuRecipe recipe) {
+      Name = recipe.Name;
+      foreach(IMagRuItem ItemItem in Items) {
+        Items.Add(new TMagRuItem(ItemItem));
+      }
+    }
 
     public TMagRuRecipe(XElement recipeElement) : base(recipeElement) {
       if (recipeElement == null) {
@@ -29,28 +35,37 @@ namespace MagRuLib {
       foreach (XElement ComponentItem in Components) {
         Items.Add(new TMagRuItem(ComponentItem));
       }
-    } 
+    }
     #endregion --- Constructor(s) ------------------------------------------------------------------------------
 
+    #region --- Converters -------------------------------------------------------------------------------------
     public XElement ToXml() {
       XElement RetVal = base.ToXml(XML_THIS_ELEMENT);
-      foreach(TMagRuItem ItemItem in Items) {
-        RetVal.Add(ItemItem.ToString());
+      if (Items.Count() > 0) {
+        foreach (IMagRuItem ItemItem in Items) {
+          RetVal.Add(ItemItem.ToXml());
+        }
       }
       return RetVal;
     }
 
+    public override string ToString() {
+      StringBuilder RetVal = new StringBuilder();
+      if (Items.Count() > 0) {
+        foreach (IMagRuItem ItemItem in Items) {
+          RetVal.AppendLine(ItemItem.ToString());
+        }
+      }
+      return RetVal.ToString().Trim('\n', '\r');
+    } 
+    #endregion --- Converters ----------------------------------------------------------------------------------
+
     public void AddItem(IMagRuItem item) {
       Items.Add(item);
     }
-
-    public string GetRecipeComponentsAsText() {
-      StringBuilder RetVal = new StringBuilder();
-      RetVal.AppendLine(Name);
-      foreach (TMagRuItem ItemItem in Items) {
-        RetVal.AppendLine($"  => {ItemItem.Name}");
-      }
-      return RetVal.ToString().Trim('\n','\r');
+    public void AddItem(IMagRuItem item, int quantity) {
+      TMagRuItem NewItem = new TMagRuItem(item, quantity);
+      Items.Add(NewItem);
     }
 
   }

@@ -1,36 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Items>
-  <Item Name="Blue gem">
+<root>
+  <Item Name="Blue" Type="Rune">
     <Recipe>
-      <Item Name="Blue gem fragment" Quantity="10000"/>
+      <Item Name="Blue gem fragment" Type="Rune" Quantity="10000"/>
     </Recipe>
   </Item>
-  <Item Name="Green gem">
+  <Item Name="Green" Type="Rune">
     <Recipe>
-      <Item Name="Green gem fragment" Quantity="15000"/>
+      <Item Name="Green gem fragment" Type="Rune" Quantity="15000"/>
     </Recipe>
   </Item>
-  <Item Name="Red gem">
+  <Item Name="Red" Type="Rune">
     <Recipe>
-      <Item Name="Red gem fragment" Quantity="20000"/>
+      <Item Name="Red fragment" Type="Rune"  Quantity="20000"/>
     </Recipe>
   </Item>
-  <Item Name="Warrior level 2">
+  <Item Name="Warrior level 2" Type="Character">
     <Recipe>
-      <Item Name="Blue gem" Quantity="10"/>
+      <Item Name="Blue" Type="Rune" Quantity="10"/>
     </Recipe>
   </Item>
-  <Item Name="Warrior level 3">
+  <Item Name="Warrior level 3" Type="Character">
     <Recipe>
-      <Item Name="Blue gem" Quantity="10"/>
-      <Item Name="Green gem" Quantity="10"/>
+      <Item Name="Blue" Type="Rune" Quantity="10"/>
+      <Item Name="Green" Type="Rune" Quantity="10"/>
     </Recipe>
   </Item>
-  <Item Name="Warrior level 4">
+  <Item Name="Warrior level 4" Type="Character">
     <Recipe>
-      <Item Name="Blue gem" Quantity="10"/>
-      <Item Name="Green gem" Quantity="10"/>
-      <Item Name="Red gem" Quantity="10"/>
+      <Item Name="Blue" Type="Rune" Quantity="10"/>
+      <Item Name="Green" Type="Rune" Quantity="10"/>
+      <Item Name="Red" Type="Rune" Quantity="10"/>
     </Recipe>
   </Item>
-</Items>
+</root>
