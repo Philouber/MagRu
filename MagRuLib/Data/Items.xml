@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item Name="Blue gem">
+    <Recipe>
+      <Item Name="Blue gem fragment" Quantity="10000"/>
+    </Recipe>
+  </Item>
+  <Item Name="Green gem">
+    <Recipe>
+      <Item Name="Green gem fragment" Quantity="15000"/>
+    </Recipe>
+  </Item>
+  <Item Name="Red gem">
+    <Recipe>
+      <Item Name="Red gem fragment" Quantity="20000"/>
+    </Recipe>
+  </Item>
+  <Item Name="Warrior level 2">
+    <Recipe>
+      <Item Name="Blue gem" Quantity="10"/>
+    </Recipe>
+  </Item>
+  <Item Name="Warrior level 3">
+    <Recipe>
+      <Item Name="Blue gem" Quantity="10"/>
+      <Item Name="Green gem" Quantity="10"/>
+    </Recipe>
+  </Item>
+  <Item Name="Warrior level 4">
+    <Recipe>
+      <Item Name="Blue gem" Quantity="10"/>
+      <Item Name="Green gem" Quantity="10"/>
+      <Item Name="Red gem" Quantity="10"/>
+    </Recipe>
+  </Item>
+</Items>
