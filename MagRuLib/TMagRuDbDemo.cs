@@ -14,9 +14,7 @@ namespace MagRuLib {
     protected IMagRuItem _WarriorLevel3;
     protected IMagRuItem _WarriorLevel4;
     protected List<IMagRuItem> _TableItem;
-    protected IMagRuRecipe _MakeWarriorLevel2;
-    protected IMagRuRecipe _MakeWarriorLevel3;
-    protected IMagRuRecipe _MakeWarriorLevel4;
+    
 
     #region --- Constructor(s) ---------------------------------------------------------------------------------
     public TMagRuDbDemo() {
